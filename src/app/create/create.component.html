@@ -1,0 +1,25 @@
+<div class="example-container">
+  <form [formGroup]="form" (ngSubmit)="create()">
+    <mat-form-field>
+      <input formControlName="name" matInput placeholder="Name">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input formControlName="picture" matInput placeholder="Picture URL">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea formControlName="description" matInput placeholder="Description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Choose ingredients</mat-label>
+      <mat-select formControlName="ingredients" multiple>
+        <mat-option *ngFor="let ingredient of ingredients" [value]="ingredient">
+          {{ingredient.ingredient.name}} </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" color="accent" class="create">Create recipe</button>
+  </form>
+</div>

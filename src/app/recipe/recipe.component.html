@@ -1,0 +1,27 @@
+
+<mat-card class="example-card" *ngIf="recipe">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title><a [routerLink]="['/recipes', recipe.id]" routerLinkActive="active">{{recipe.name}}</a></mat-card-title>
+      <mat-card-subtitle>{{recipe.description}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="recipe.picture">
+    <mat-card-subtitle>
+
+        <button mat-button (click)="toggleVisible()"> SHOW DETAILS</button>
+        <div *ngIf="visible">
+    <ul>
+      <li *ngFor="let ingredient of recipe.ingredients">{{ingredient.ingredient.name}} / {{ingredient.quantity}} / {{ingredient.unit}}
+      </li>
+    </ul>
+
+    <ul>
+      
+        <li *ngFor="let instruction of recipe.instructions">
+          {{instruction}}
+        </li>
+      </ul>
+    </div>
+    <button mat-button (click)="delete.emit()">DELETE</button>
+    </mat-card-subtitle>
+  </mat-card>

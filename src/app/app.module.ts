@@ -2,13 +2,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { CustomMaterialModule } from './custom-material/custom-material.module';
+import { RecipeComponent } from './recipe/recipe.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { RecipesComponent } from './recipes/recipes.component';
+import { DetailComponent } from './detail/detail.component';
+import { CreateComponent } from './create/create.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    RecipeComponent,
+    RecipesComponent,
+    DetailComponent,
+    CreateComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CustomMaterialModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
